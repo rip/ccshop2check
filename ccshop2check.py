@@ -13,10 +13,9 @@ def ァ():
             cvv = card[3].strip(' ')
             addr = ''; err = ''
             if card[6] != '  ':
-               if (i.isdigit() for i in card[6]):
+               if any(i.isdigit() for i in card[6]):
                   addr = card[6].lstrip().rstrip()
-               else:
-                addr = '' # too lazy to support uncommon base values
+               else: # too lazy to support uncommon base values
                 err = '[!] no street # found, possibly from base with different amount of values'
             if addr == '': zip = '' # apparently does not support zip only, requires street if checking with addr+zip option (according to dev)
             if card[9] != '  ' and addr != '': zip = card[9].strip(' ')
