@@ -1,4 +1,4 @@
-#⚙️ Format:   CCnum|Exp.Date|CVV|Address|Zip|
+# ⚙️ Format: CCnum|Exp.Date|CVV|Address|Zip|
 import tkinter as tk
 from tkinter import simpledialog
 ー=tk.Tk();ー.title('🦎')
