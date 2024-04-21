@@ -1,7 +1,6 @@
 # ⚙️ Format: CCnum|Exp.Date|CVV|Address|Zip|
-import tkinter as tk
-from tkinter import simpledialog
-ー=tk.Tk();ー.title('🦎')
+import tkinter as ヒ; from tkinter import simpledialog
+ー=ヒ.Tk();ー.title('🦎')
 def ァ():
     ア = simpledialog.askstring("ccshop2check", "paste the html from view-source:https://ccshop2.com/cc_list.php (check your terminal for the output)")
     if ア:
@@ -28,5 +27,5 @@ def ァ():
             else: valid += [log]
     for v in valid: print(v)
     for iv in invalid: print(iv)
-ミ=tk.Button(ー, text="Click here to input the html source", command=ァ)
+ミ=ヒ.Button(ー, text="Click here to input the html source", command=ァ)
 ミ.pack();ー.mainloop()
