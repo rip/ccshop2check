@@ -13,7 +13,7 @@ def ァ():
             cvv = card[3].strip(' ')
             addr = ''; err = ''
             if card[6] != '  ':
-               if any(i.isdigit() for i in card[6]):
+               if (i.isdigit() for i in card[6]):
                   addr = card[6].lstrip().rstrip()
                else:
                 addr = '' # too lazy to support uncommon base values
