@@ -9,20 +9,20 @@ def ァ():
        valid = []; invalid = []
        for ウ in イ:
            if '<td class="text-start">' in ウ:
-            card = ウ.split('<td class="text-start">')[1].split('|')
-            cc = card[0].strip(' ')
-            exp = f'{card[1].rstrip()}{card[2].lstrip().replace('20','')}'.strip(' ')
-            cvv = card[3].strip(' ')
+            c = ウ.split('<td class="text-start">')[1].split('|')
+            cc = c[0].strip(' ')
+            exp = f'{c[1].rstrip()}{c[2].lstrip().replace('20','')}'.strip(' ')
+            cvv = c[3].strip(' ')
             addr = ''; err = ''
-            if card[6] != '  ':
-               if any(i.isdigit() for i in card[6]):
-                  addr = card[6].lstrip().rstrip()
+            if c[6] != '  ':
+               if any(i.isdigit() for i in c[6]):
+                  addr = c[6].lstrip().rstrip()
                else: # too lazy to support uncommon base values
                 err = '[!] no street / zip found, possibly from base with different amount of values'
             if addr == '': # apparently does not support zip only,
                zip = '' # requires street if checking with addr+zip option (because of avs according to dev)
                err = '[!] no street / zip found, possibly from base with different amount of values'
-            if card[9] != '  ' and addr != '': zip = card[9].strip(' ')
+            if c[9] != '  ' and addr != '': zip = c[9].strip(' ')
             log = f'{cc}|{exp}|{cvv}|{addr}|{zip}|{err}'
             if err != '': invalid += [log]
             else: valid += [log]
