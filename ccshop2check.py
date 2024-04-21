@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import simpledialog
-root = tk.Tk(); root.title('🦎')
+ー=tk.Tk();ー.title('🦎')
 def ァ():
     ア = simpledialog.askstring("ccshop2check", "paste the html from view-source:https://ccshop2.com/cc_list.php (check your terminal for the output)")
     if ア:
@@ -13,9 +13,8 @@ def ァ():
             cvv = card[3].strip(' ')
             addr = ''
             if card[6] != '  ': addr = card[6].lstrip().rstrip()
-            zip = ''
-            if card[9] != '  ': zip = card[9].strip(' ')
+            if addr == '': zip = '' # apparently does not support zip only, requires street if checking with addr+zip option (according to dev)
+            if card[9] != '  ' and addr != '': zip = card[9].strip(' ')
             print(f'{cc}|{exp}|{cvv}|{addr}|{zip}|')
-button = tk.Button(root, text="Click here to input the html source", command=ァ)
-button.pack()
-root.mainloop()
+ミ=tk.Button(ー, text="Click here to input the html source", command=ァ)
+ミ.pack();ー.mainloop()
